@@ -4,6 +4,7 @@ Info about our project comes here
 """
 
 # IMPORTS
+import random, string
 
 
 __author__ = "Sven De Visscher"
@@ -11,12 +12,21 @@ __email__ = "sven.devisscher@student.kdg.be"
 __status__ = "Development"
 
 
-# CONFIGURING I/O
+# list
 
 
-def main():
-    pass
+def generatePasssword(num):
+    password = ''
+
+    for i in range(num):
+        x = random.randint(0,9)
+
+        password += string.printable[x]
+    return password
+
+print(generatePasssword(9))
 
 
-if __name__ == '__main__':  # code to execute if called from command-line
-    main()
+
+if __name__ == '__generatePassword__':  # code to execute if called from command-line
+    generatePasssword()
