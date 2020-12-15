@@ -9,51 +9,75 @@ __email__ = "sven.devisscher@student.kdg.be"
 __status__ = "Finished"
 
 
-# Deze functie telt 2 getallen op
-def optellen(x, y):
-    return x + y
-
-# Deze functie trekt 2 getallen van elkaar af
-def aftrekken(x, y):
-    return x - y
-
-# Deze functie vermenigvuldigt 2 getallen
-def vermenigvuldigen(x, y):
-    return x * y
-
-# Deze functie deelt 2 getallen door elkaar
-def delen(x, y):
-    return x / y
-
-print("Select operation.")
-print("1.Optellen")
-print("2.Aftrekken")
-print("3.Vermenigvuldigen")
-print("4.Delen")
-
-
-while True:
-    # Vraagt input aan de gebruiker
-    keuze = input("Enter choice(1/2/3/4):\n")
-
-    # Bekijkt of de keuze één van de 4 opties is
+# This function add 2 numbers
+def add(x, y):
     try:
+        return(x + y)
+    except Exception as s:
+        print(s)
+        return
+
+# This function substract 2 numbers
+def subtract(x, y):
+    try:
+        return(x - y)
+    except Exception as s:
+        print(s)
+        return
+
+# This function multiplies 2 numbers
+def multiplies(x, y):
+    try:
+        return(x * y)
+    except Exception as s:
+        print(s)
+        return
+
+
+# This function divides 2 numbers
+def divide(x, y):
+    try:
+        return(x / y)
+    except Exception as s:
+        print(s)
+        return
+
+
+
+
+def main():
+    print("Select operation.")
+    print("1.add")
+    print("2.subtract")
+    print("3.multiply")
+    print("4.divide")
+    try:
+
+        choice = input("Enter choice(1/2/3/4):\n")   # Asks input from the user
+
+        # Makes sure that you've entered a number from 1 to 4
+
         num1 = float(input("Kies en typ het eerste getal: "))
         num2 = float(input("Kies en typ het 2de getal: "))
 
-        if keuze == '1':
-            print(num1, "+", num2, "=", optellen(num1, num2))   # Telt de 2 getallen op
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))   # Adds 2 numbers and print it
 
-        elif keuze == '2':
-            print(num1, "-", num2, "=", aftrekken(num1, num2))   # Trekt de 2 getallen af
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))   # Subtracts 2 numbers and print it
 
-        elif keuze == '3':
-            print(num1, "*", num2, "=", vermenigvuldigen(num1, num2))   # Vermenigvuldigd de 2 getallen
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiplies(num1, num2))   # Multiplies 2 numbers and print it
 
-        elif keuze == '4':
-            print(num1, "/", num2, "=", delen(num1, num2))  # Deelt de 2 getallen door elkaar
-        break
-    except:
-        print("ERROR Geef een geldig getal in")    # Zegt dat je een ongeldig getal hebt ingevoerd.
-    continue
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))  # Divides 2 numbers and print it
 
+        else:
+            raise Exception("ERROR geef een getal in")  # Displays an error
+
+
+    except Exception as s:
+        print(s)
+        main()
+if __name__ == '__main__':  # code to execute if called from command-line
+    main()
