@@ -29,7 +29,7 @@ def main():
 
                 try:
                     yourchoice = input(
-                        """1 - punctuation only \n2 - Numbers \n3 - Uppercase letters \n4 - Undercase only \n""")
+                        """1 - punctuation only\n2 - Numbers\n3 - Uppercase letters\n4 - Undercase only\n5 - Combo\n""")
                     # Gives you 4 choices
 
                     if yourchoice == '1':
@@ -53,9 +53,20 @@ def main():
 
                     elif yourchoice == '4':
                         lowercase = string.ascii_lowercase
-                        pw = ''.join(random.choice(lowercase) for i in range(int(password_length)))
+                        pw = ''.join(random.choice(lowercase ) for i in range(int(password_length)))
                         print(pw)
                     # If you choose 4 then your password will exists only of lowercase letters
+                    # with the chosen password length
+
+                    elif yourchoice == '5':
+                        lowercase = string.ascii_lowercase
+                        uppercase = string.ascii_uppercase
+                        numbers = string.digits
+                        characters = string.punctuation
+                        pw = ''.join(random.choice(lowercase + uppercase + numbers + characters)
+                                     for i in range(int(password_length)))
+                        print(pw)
+                    # If you choose 5 then your password will exists of a combo of letters,numbers and characters
                     # with the chosen password length
 
                     else:

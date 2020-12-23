@@ -15,7 +15,7 @@ def add(x, y):
         return(x + y)
     except Exception as s:
         print(s)
-        return
+
 
 # This function substract 2 numbers
 def subtract(x, y):
@@ -23,7 +23,7 @@ def subtract(x, y):
         return(x - y)
     except Exception as s:
         print(s)
-        return
+
 
 # This function multiplies 2 numbers
 def multiplies(x, y):
@@ -31,7 +31,7 @@ def multiplies(x, y):
         return(x * y)
     except Exception as s:
         print(s)
-        return
+
 
 
 # This function divides 2 numbers
@@ -40,7 +40,7 @@ def divide(x, y):
         return(x / y)
     except Exception as s:
         print(s)
-        return
+
 
 
 
